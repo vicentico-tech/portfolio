@@ -2,7 +2,7 @@ import { About } from "@/components/About";
 import { Background } from "@/components/Background";
 import { Contact } from "@/components/Contact";
 import { CursorGlow } from "@/components/CursorGlow";
-import { DigitalTwin } from "@/components/DigitalTwin";
+import { DigitalTwinLoader } from "@/components/DigitalTwinLoader";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -27,7 +27,7 @@ export default function Page() {
         <Contact />
       </main>
       <Footer />
-      <DigitalTwin />
+      <DigitalTwinLoader />
     </>
   );
 }
