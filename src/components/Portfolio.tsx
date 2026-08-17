@@ -66,30 +66,6 @@ export function Portfolio() {
             </motion.article>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, delay: 0.15 }}
-          className="mt-10 card p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 overflow-hidden relative noise"
-        >
-          <div className="max-w-2xl">
-            <h3 className="font-display text-2xl md:text-3xl text-white leading-tight">
-              {portfolio.ctaTitle}
-            </h3>
-            <p className="mt-3 text-[color:var(--color-muted)]">
-              {portfolio.ctaBody}
-            </p>
-          </div>
-          <a
-            href="#contact"
-            className="btn btn-primary self-start md:self-auto shrink-0"
-          >
-            {portfolio.ctaButton}
-            <ArrowUpRight size={16} />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

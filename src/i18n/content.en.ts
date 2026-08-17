@@ -87,10 +87,6 @@ export const contentEn: Content = {
       "A handful of projects I've built and published end to end, alongside the enterprise engagements from my career journey above.",
     openLive: "View live",
     loginRequired: "Login required",
-    ctaTitle: "Case studies and code samples — landing here soon.",
-    ctaBody:
-      "Want a walk-through of a specific piece of work now? I'm happy to share portfolio material and code samples on request.",
-    ctaButton: "Request portfolio",
   },
   contact: {
     eyebrow: "Contact",

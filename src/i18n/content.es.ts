@@ -87,10 +87,6 @@ export const contentEs: Content = {
       "Algunos proyectos que construí y publiqué de principio a fin, junto con los proyectos empresariales de mi trayectoria profesional de arriba.",
     openLive: "Ver en vivo",
     loginRequired: "Requiere acceso",
-    ctaTitle: "Casos de estudio y muestras de código — próximamente aquí.",
-    ctaBody:
-      "¿Quieres un recorrido por algún trabajo en particular ahora mismo? Con gusto comparto material de portafolio y muestras de código a pedido.",
-    ctaButton: "Solicitar portafolio",
   },
   contact: {
     eyebrow: "Contacto",

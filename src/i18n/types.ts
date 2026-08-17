@@ -76,9 +76,6 @@ export type Content = {
     description: string;
     openLive: string;
     loginRequired: string;
-    ctaTitle: string;
-    ctaBody: string;
-    ctaButton: string;
   };
   contact: {
     eyebrow: string;
