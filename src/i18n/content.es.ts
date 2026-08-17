@@ -16,7 +16,7 @@ export const contentEs: Content = {
     status: "Disponible para proyectos seleccionados",
     bio: [
       "Ingeniero Mecánico convertido en Ingeniero Front-End, con historial de interfaces en producción para clientes empresariales en Chile y Norteamérica.",
-      "Me enfoco en el oficio de la ingeniería del lado del cliente — arquitectura de componentes, estado con tipado seguro, y los detalles de diseño que separan una funcionalidad entregada de un producto bien terminado.",
+      "Me enfoco en el oficio de la ingeniería del lado del cliente — arquitectura de componentes, estado con tipado seguro y los detalles de diseño que separan una funcionalidad entregada de un producto bien terminado.",
       "Profundo conocimiento de Angular (NGRX, Signals, Atomic Design) y cada vez más experiencia en React / Next.js.",
     ],
     stats: [
@@ -38,9 +38,9 @@ export const contentEs: Content = {
   },
   hero: {
     titleLine1: "Ingeniería Front-End",
-    titleLine2: "para productos que se lanzan.",
+    titleLine2: "para productos que llegan a producción.",
     intro:
-      "Soy Jose Garcia Mata — Ingeniero Front-End radicado en Santiago, Chile. Construyo interfaces performantes, tipadas y basadas en componentes con Angular y React / Next.js, con la disciplina de arquitectura que necesitan los equipos empresariales.",
+      "Soy Jose Garcia Mata — Ingeniero Front-End radicado en Santiago, Chile. Construyo interfaces de alto rendimiento, tipadas y basadas en componentes con Angular y React / Next.js, con la disciplina de arquitectura que necesitan los equipos empresariales.",
     exploreJourney: "Ver mi trayectoria",
     scrollCue: "Desplázate para explorar",
   },
@@ -60,7 +60,7 @@ export const contentEs: Content = {
         body: "Componentes atómicos, contratos con tipado seguro, estado reactivo — pero solo donde realmente aportan mantenibilidad.",
       },
       {
-        title: "Listo para la empresa",
+        title: "Nivel empresarial",
         body: "Años de trabajo en consultoras empresariales entregando a clientes de banca, RR.HH. y remuneraciones bajo plazos reales.",
       },
     ],
@@ -72,7 +72,7 @@ export const contentEs: Content = {
     eyebrow: "Trayectoria profesional",
     title: "Del taller al código.",
     description:
-      "Un recorrido de más de cinco años entre freelance, agencias boutique y consultoras empresariales. Cada etapa afinó una arista distinta — arquitectura, ritmo de entrega u oficio con clientes.",
+      "Un recorrido de más de cinco años entre freelance, equipos de ingeniería reducidos y consultoras empresariales. Cada etapa afinó una arista distinta — arquitectura, ritmo de entrega u oficio con clientes.",
   },
   skills: {
     eyebrow: "Habilidades y stack",
@@ -94,9 +94,9 @@ export const contentEs: Content = {
   },
   contact: {
     eyebrow: "Contacto",
-    title: "Construyamos algo que valga la pena lanzar.",
+    title: "Construyamos algo que valga la pena entregar.",
     description:
-      "Disponible para proyectos seleccionados — tiempo completo, contrato o asesoría. Envíame un mensaje, escríbeme directo o contáctame por WhatsApp.",
+      "Disponible para proyectos seleccionados — tiempo completo, contrato o asesoría. Envíame un mensaje, escríbeme directamente por correo o contáctame por WhatsApp.",
     responseTime: "Tiempo de respuesta habitual: dentro de 24 horas en días hábiles.",
     sendMessage: "Enviar un mensaje",
     copyEmail: "Copiar email",
@@ -140,7 +140,7 @@ export const contentEs: Content = {
       highlights: [
         "A cargo de módulos Angular complejos con gestión de estado vía NGRX.",
         "Trabajé junto a diseñadores traduciendo flujos de Figma a una UI accesible y responsiva.",
-        "Revisé código de pares y mentoricé en patrones de TypeScript e idiomas de RxJS.",
+        "Revisé código de pares y guié a otros en patrones de TypeScript y buenas prácticas de RxJS.",
       ],
       tags: ["Angular", "NGRX", "TypeScript", "SASS", "Angular Material", "Jira"],
     },
@@ -178,7 +178,7 @@ export const contentEs: Content = {
       highlights: [
         "Construí y mantuve componentes Angular frente a requerimientos que cambiaban semana a semana.",
         "Trabajé directamente con un equipo pequeño y ágil, a cargo de funcionalidades de principio a fin.",
-        "Consumí APIs REST y resolví trabajo cotidiano de estado y formularios complejos.",
+        "Consumí APIs REST y resolví el trabajo diario de manejo de estado y formularios complejos.",
       ],
       tags: ["Angular", "TypeScript", "SCSS", "REST APIs"],
     },

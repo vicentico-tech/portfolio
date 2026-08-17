@@ -17,7 +17,7 @@ export const contentEn: Content = {
     bio: [
       "Mechanical Engineer turned Front-End Engineer with a track record of shipping production interfaces for enterprise clients across Chile and North America.",
       "I focus on the craft of client-side engineering — component architecture, type-safe state, and the design details that separate a shipped feature from a shipped product.",
-      "Deep with Angular (NGRX, Signals, Atomic Design) and increasingly with the React / Next.js side of the stack.",
+      "Deep expertise with Angular (NGRX, Signals, Atomic Design), with growing range on the React / Next.js side of the stack.",
     ],
     stats: [
       { label: "Years shipping production UIs", value: "5+" },
@@ -72,7 +72,7 @@ export const contentEn: Content = {
     eyebrow: "Career journey",
     title: "From workshop to codebase.",
     description:
-      "A five-plus-year arc through freelance shipping, boutique agencies and enterprise consultancies. Each stop sharpened a different edge — architecture, delivery cadence, or client craft.",
+      "A five-plus-year arc through freelance shipping, lean engineering teams and enterprise consultancies. Each stop sharpened a different edge — architecture, delivery cadence, or client craft.",
   },
   skills: {
     eyebrow: "Skills & stack",
@@ -85,7 +85,7 @@ export const contentEn: Content = {
     title: "Selected work — live and shipped.",
     description:
       "A handful of projects I've built and published end to end, alongside the enterprise engagements from my career journey above.",
-    openLive: "Open live",
+    openLive: "View live",
     loginRequired: "Login required",
     ctaTitle: "Case studies and code samples — landing here soon.",
     ctaBody:
