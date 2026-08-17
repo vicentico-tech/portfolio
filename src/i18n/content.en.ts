@@ -87,6 +87,7 @@ export const contentEn: Content = {
       "A handful of projects I've built and published end to end, alongside the enterprise engagements from my career journey above.",
     openLive: "View live",
     loginRequired: "Login required",
+    demoCredentialsLabel: "Demo credentials",
   },
   contact: {
     eyebrow: "Contact",
@@ -275,6 +276,7 @@ export const contentEn: Content = {
       href: "https://nextjs-dashboard-iota-steel.vercel.app/login",
       tags: ["Next.js", "React", "TypeScript"],
       loginRequired: true,
+      demoCredentials: { user: "user@nextmail.com", pass: "123456" },
     },
     {
       title: "League of Legends Champions",

@@ -53,6 +53,17 @@ export function Portfolio() {
                   </span>
                 ))}
               </div>
+              {p.demoCredentials && (
+                <div className="mt-4 rounded-lg border border-[color:var(--color-border)] bg-white/[0.02] px-3 py-2">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-[color:var(--color-muted-2)]">
+                    {portfolio.demoCredentialsLabel}
+                  </div>
+                  <div className="mt-1 font-mono text-xs text-[color:var(--color-foreground)]/80 space-y-0.5">
+                    <div>{p.demoCredentials.user}</div>
+                    <div>{p.demoCredentials.pass}</div>
+                  </div>
+                </div>
+              )}
               <a
                 href={p.href}
                 target="_blank"

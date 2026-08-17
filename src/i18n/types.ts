@@ -21,6 +21,7 @@ export type LiveProject = {
   href: string;
   tags: string[];
   loginRequired?: boolean;
+  demoCredentials?: { user: string; pass: string };
 };
 
 export type Content = {
@@ -76,6 +77,7 @@ export type Content = {
     description: string;
     openLive: string;
     loginRequired: string;
+    demoCredentialsLabel: string;
   };
   contact: {
     eyebrow: string;
