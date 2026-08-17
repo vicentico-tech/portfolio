@@ -3,18 +3,21 @@
 import { motion } from "framer-motion";
 import { Code2, Layers, Palette, Terminal } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
-import { skillGroups } from "@/data/profile";
+import { useLocale } from "@/i18n/LanguageContext";
 
 const icons = [Code2, Layers, Palette, Terminal];
 
 export function Skills() {
+  const { content } = useLocale();
+  const { skills, skillGroups } = content;
+
   return (
     <section id="skills" className="section relative">
       <div className="container-x">
         <SectionHeader
-          eyebrow="Skills & stack"
-          title="The tools I reach for."
-          description="A working stack refined through enterprise delivery — biased toward long-term maintainability, type safety, and reactive state."
+          eyebrow={skills.eyebrow}
+          title={skills.title}
+          description={skills.description}
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

@@ -48,7 +48,7 @@ EDUCATION
 
 CONTACT
 - Email: josegarciama23@gmail.com
-- LinkedIn: https://www.linkedin.com/in/jose-garciamata-638447124
+- LinkedIn: https://www.linkedin.com/in/jose-garcia-mata-638447124/
 - Location: Gran Santiago, Región Metropolitana de Santiago, Chile
 
 AVAILABILITY

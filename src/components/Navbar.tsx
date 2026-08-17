@@ -4,9 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navLinks, profile } from "@/data/profile";
+import { useLocale } from "@/i18n/LanguageContext";
+import { LanguageSwitch } from "./LanguageSwitch";
 
 export function Navbar() {
+  const { content } = useLocale();
+  const navLinks = content.nav.links;
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("#about");
@@ -35,7 +38,7 @@ export function Navbar() {
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [navLinks]);
 
   return (
     <header
@@ -56,7 +59,7 @@ export function Navbar() {
             <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
           </span>
           <span className="hidden sm:block font-display text-sm tracking-tight text-white/90 group-hover:text-white">
-            {profile.name}
+            {content.profile.name}
           </span>
         </Link>
 
@@ -84,8 +87,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          <LanguageSwitch />
           <Link href="#contact" className="btn btn-primary text-sm">
-            Get in touch
+            {content.nav.getInTouch}
           </Link>
         </div>
 
@@ -127,8 +131,9 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="btn btn-primary mt-2 justify-center"
               >
-                Get in touch
+                {content.nav.getInTouch}
               </Link>
+              <LanguageSwitch className="mt-2 self-start" />
             </div>
           </motion.div>
         )}

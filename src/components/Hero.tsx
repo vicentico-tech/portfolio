@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
-import { marqueeStack, profile } from "@/data/profile";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { useLocale } from "@/i18n/LanguageContext";
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,6 +23,10 @@ const item = {
 };
 
 export function Hero() {
+  const { content } = useLocale();
+  const { profile, marqueeStack } = content;
+  const { hero } = content;
+
   return (
     <section id="top" className="relative pt-32 pb-24 md:pt-40 md:pb-32">
       <div className="container-x">
@@ -50,31 +54,21 @@ export function Hero() {
             variants={item}
             className="font-display text-[clamp(2.75rem,7vw,5.75rem)] leading-[0.98] tracking-tight text-white"
           >
-            <span className="block">Front-End engineering</span>
-            <span className="block text-gradient">for products that ship.</span>
+            <span className="block">{hero.titleLine1}</span>
+            <span className="block text-gradient">{hero.titleLine2}</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-8 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl leading-relaxed"
           >
-            I&apos;m{" "}
-            <span className="text-white font-medium">Jose Garcia Mata</span> — a
-            Front-End Engineer based in Santiago, Chile. I build performant,
-            typed, component-driven interfaces in{" "}
-            <span className="text-white">Angular</span> and{" "}
-            <span className="text-white">React / Next.js</span>, with the
-            architecture discipline enterprise teams rely on.
+            {hero.intro}
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <Link href="#journey" className="btn btn-primary">
-              Explore my journey
+              {hero.exploreJourney}
               <ArrowUpRight size={16} />
-            </Link>
-            <Link href="#contact" className="btn">
-              <Sparkles size={14} />
-              Start a project
             </Link>
           </motion.div>
         </motion.div>
@@ -87,7 +81,7 @@ export function Hero() {
           className="hidden md:flex mt-24 items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-[color:var(--color-muted-2)]"
         >
           <span className="block w-8 h-px bg-gradient-to-r from-white/40 to-transparent" />
-          Scroll to explore
+          {hero.scrollCue}
         </motion.div>
       </div>
 

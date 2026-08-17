@@ -3,23 +3,26 @@
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
-import { experiences } from "@/data/profile";
+import { useLocale } from "@/i18n/LanguageContext";
 
 export function Timeline() {
+  const { content } = useLocale();
+  const { timeline, experiences } = content;
+
   return (
     <section id="journey" className="section relative">
       <div className="container-x">
         <SectionHeader
-          eyebrow="Career journey"
-          title="From workshop to codebase."
-          description="A five-plus-year arc through freelance shipping, boutique agencies and enterprise consultancies. Each stop sharpened a different edge — architecture, delivery cadence, or client craft."
+          eyebrow={timeline.eyebrow}
+          title={timeline.title}
+          description={timeline.description}
         />
 
         <div className="relative">
           {/* Center rail */}
           <div className="pointer-events-none absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[color:var(--color-border-strong)] to-transparent md:-translate-x-1/2" />
 
-          <div className="space-y-10 md:space-y-14">
+          <div className="space-y-12 md:space-y-16">
             {experiences.map((exp, idx) => {
               const isRight = idx % 2 === 1;
               return (
@@ -45,7 +48,7 @@ export function Timeline() {
                       isRight ? "md:col-start-2" : "md:col-start-1"
                     }`}
                   >
-                    <div className="card p-6 md:p-7">
+                    <div className="card p-7 md:p-8">
                       <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0">
                           <div className="flex items-center gap-2 text-[color:var(--color-muted)] text-xs font-mono uppercase tracking-widest">

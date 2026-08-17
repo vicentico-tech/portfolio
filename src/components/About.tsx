@@ -1,36 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Compass, GraduationCap, Wrench } from "lucide-react";
+import { Award, BookOpen, Compass, GraduationCap, Wrench } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
-import { certifications, education, profile } from "@/data/profile";
+import { useLocale } from "@/i18n/LanguageContext";
 
-const values = [
-  {
-    icon: Compass,
-    title: "Engineering mindset",
-    body: "A mechanical engineering foundation shapes how I decompose problems — clean interfaces, predictable state, honest trade-offs.",
-  },
-  {
-    icon: Wrench,
-    title: "Craft over ceremony",
-    body: "Atomic components, type-safe contracts, reactive state — but only where they earn their weight in maintainability.",
-  },
-  {
-    icon: Award,
-    title: "Enterprise-ready",
-    body: "Years of work inside enterprise consultancies delivering to banking, HR and payroll clients under real deadlines.",
-  },
-];
+const valueIcons = [Compass, Wrench, Award];
 
 export function About() {
+  const { content } = useLocale();
+  const { profile, about, education, certifications, coursesInProgress } = content;
+  const values = about.values.map((v, i) => ({ ...v, icon: valueIcons[i] }));
+
   return (
     <section id="about" className="section relative">
       <div className="container-x">
         <SectionHeader
-          eyebrow="About"
-          title="Engineer first. Front-end by focus."
-          description="I moved from mechanical engineering into software because interfaces are where products meet people. Now I spend my days shaping component systems, refining state flows, and pushing the last 10% of polish that makes a product feel right."
+          eyebrow={about.eyebrow}
+          title={about.title}
+          description={about.description}
         />
 
         <div className="grid gap-6 lg:grid-cols-12">
@@ -45,7 +33,7 @@ export function About() {
             <div className="relative">
               <div className="inline-flex items-center gap-2 chip mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--color-accent-2)]" />
-                Bio
+                {about.bioLabel}
               </div>
               <div className="space-y-4 text-[color:var(--color-foreground)]/90 text-base md:text-lg leading-relaxed">
                 {profile.bio.map((p, i) => (
@@ -100,8 +88,8 @@ export function About() {
           </div>
         </div>
 
-        {/* Education + certifications */}
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        {/* Education + certifications + courses */}
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +100,7 @@ export function About() {
             <div className="flex items-center gap-2 mb-5 text-[color:var(--color-muted)]">
               <GraduationCap size={16} />
               <span className="eyebrow" style={{ margin: 0 }}>
-                Education
+                {about.educationLabel}
               </span>
             </div>
             {education.map((e) => (
@@ -143,11 +131,33 @@ export function About() {
             <div className="flex items-center gap-2 mb-5 text-[color:var(--color-muted)]">
               <Award size={16} />
               <span className="eyebrow" style={{ margin: 0 }}>
-                Certifications
+                {about.certificationsLabel}
               </span>
             </div>
             <div className="flex flex-wrap gap-2">
               {certifications.map((c) => (
+                <span key={c} className="chip">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="card p-6 md:p-8"
+          >
+            <div className="flex items-center gap-2 mb-5 text-[color:var(--color-muted)]">
+              <BookOpen size={16} />
+              <span className="eyebrow" style={{ margin: 0 }}>
+                {about.coursesLabel}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {coursesInProgress.map((c) => (
                 <span key={c} className="chip">
                   {c}
                 </span>

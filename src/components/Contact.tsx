@@ -1,13 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Copy, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Copy, MapPin } from "lucide-react";
 import { useState } from "react";
 import { SectionHeader } from "./SectionHeader";
+import { ContactForm } from "./ContactForm";
 import { LinkedInIcon } from "./icons/LinkedInIcon";
-import { profile } from "@/data/profile";
+import { WhatsAppIcon } from "./icons/WhatsAppIcon";
+import { useLocale } from "@/i18n/LanguageContext";
 
 export function Contact() {
+  const { content } = useLocale();
+  const { profile, contact } = content;
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -24,9 +28,9 @@ export function Contact() {
     <section id="contact" className="section relative">
       <div className="container-x">
         <SectionHeader
-          eyebrow="Contact"
-          title="Let's build something worth shipping."
-          description="Open to select engagements — full-time, contract, or advisory. Fastest way to reach me is email."
+          eyebrow={contact.eyebrow}
+          title={contact.title}
+          description={contact.description}
           align="center"
         />
 
@@ -35,7 +39,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
-          className="mx-auto max-w-3xl card p-8 md:p-12 relative overflow-hidden noise"
+          className="mx-auto max-w-2xl card p-8 md:p-12 relative overflow-hidden noise"
         >
           <div className="text-center">
             <div className="inline-flex chip mb-6">
@@ -43,18 +47,26 @@ export function Contact() {
               {profile.location}
             </div>
             <h3 className="font-display text-3xl md:text-4xl text-gradient">
-              {profile.email}
+              {contact.sendMessage}
             </h3>
 
+            <ContactForm />
+
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a href={`mailto:${profile.email}`} className="btn btn-primary">
-                <Mail size={16} />
-                Send an email
-              </a>
               <button onClick={copyEmail} className="btn">
                 <Copy size={14} />
-                {copied ? "Copied" : "Copy email"}
+                {copied ? contact.copiedEmail : contact.copyEmail}
               </button>
+              <a
+                href={profile.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+              >
+                <WhatsAppIcon size={14} />
+                {contact.whatsappLabel}
+                <ArrowUpRight size={14} />
+              </a>
               <a
                 href={profile.linkedin}
                 target="_blank"
@@ -68,7 +80,7 @@ export function Contact() {
             </div>
 
             <p className="mt-8 text-sm text-[color:var(--color-muted)]">
-              Typical response time: within 24 hours on business days.
+              {contact.responseTime}
             </p>
           </div>
         </motion.div>

@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { LinkedInIcon } from "./icons/LinkedInIcon";
-import { profile } from "@/data/profile";
+import { useLocale } from "@/i18n/LanguageContext";
 
 export function Footer() {
+  const { content } = useLocale();
+  const { profile, footer } = content;
+
   return (
     <footer className="relative mt-8 border-t border-[color:var(--color-border)] py-10">
       <div className="container-x flex flex-col md:flex-row items-center justify-between gap-6">
@@ -12,12 +17,12 @@ export function Footer() {
             JG
           </span>
           <span className="text-sm text-[color:var(--color-muted)]">
-            © {new Date().getFullYear()} {profile.name}. Built with Next.js.
+            © {new Date().getFullYear()} {profile.name}. {footer.builtWith}
           </span>
         </div>
         <div className="flex items-center gap-4 text-[color:var(--color-muted)]">
           <Link
-            href={`mailto:${profile.email}`}
+            href="#contact"
             className="hover:text-white transition-colors"
             aria-label="Email"
           >
